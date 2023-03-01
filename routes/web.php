@@ -8,6 +8,10 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PengalamanKuliahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,21 +25,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::prefix('/products')->group(function() {
-    Route::get('/', [ProductController::class, 'index']);
-    Route::get('/marbel-edu-game', fn ()=> "Marbel Edu Game");
-    Route::get('/marbel-and-friends-kids-games', fn ()=>  "Marbel and Friends Kids Games");
-    Route::get('/riri-story-books', fn ()=> "Riri Story Books");
-    Route::get('/kolak-kids-songs', fn ()=> "Kolak Kids Songs");
-});
-Route::get('/news', [NewsController::class, 'index']);
-Route::get('/news/{news}', [NewsController::class, 'show']);
-Route::prefix('program')->group(function() {
-    Route::get('/', [ProgramController::class, 'index']);
-    Route::get('/karir', [ProgramController::class, 'karir']);
-    Route::get('/magang', [ProgramController::class, 'magang']);
-    Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
-});
-Route::get("/about-us", [AboutUsController::class, 'index']);
-Route::get("/contact-us", [ContactUsController::class, 'index']);
+// Praktikum 1 Jobsheet 3
+// Route::get('/', [HomeController::class, 'index']);
+// Route::prefix('/products')->group(function() {
+//     Route::get('/', [ProductController::class, 'index']);
+//     Route::get('/{name}', [ProductController::class, 'detail']);
+// });
+// Route::get('/news', [NewsController::class, 'index']);
+// Route::get('/news/{news}', [NewsController::class, 'show']);
+// Route::prefix('program')->group(function() {
+//     Route::get('/', [ProgramController::class, 'index']);
+//     Route::get('/{program}', [ProgramController::class, 'program']);
+// });
+// Route::get("/about-us", [AboutUsController::class, 'index']);
+// Route::get("/contact-us", [ContactUsController::class, 'index']);
+
+// Praktikum 2 Jobsheet 3
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);

@@ -7,15 +7,10 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     public function index(){
-        return "
-        <ul>
-            <li><a href='#'>https://www.educastudio.com/news</a></li>
-            <li><a href='/news/educa-studio-berbagi-untuk-warga-sekitarterdampak-covid-19'>https://www.educastudio.com/news/educa-studio-berbagi-untuk-warga-sekitarterdampak-covid-19</a></li>
-        </ul>
-        ";
+        return view('praktikum1.news');
     }
 
     public function show($param){
-        return "News: <a href='https://www.educastudio.com/news/educa-studio-berbagi-untuk-warga-sekitarterdampak-covid-19'>https://www.educastudio.com/news/$param</a>";
+        return view('praktikum1.show-news')->with('news', $param);
     }
 }

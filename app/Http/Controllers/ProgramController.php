@@ -7,24 +7,10 @@ use Illuminate\Http\Request;
 class ProgramController extends Controller
 {
     public function index(){
-        return "
-        <ul>
-            <li>https://www.educastudio.com/program/karir</li>
-            <li>https://www.educastudio.com/program/magang</li>
-            <li>https://www.educastudio.com/program/kunjungan-industri</li>
-        </ul>
-        ";
+        return view('praktikum1.program');
     }
 
-    public function karir(){
-        return "Karir";
-    }
-
-    public function magang(){
-        return "Magang";
-    }
-
-    public function kunjunganIndustri(){
-        return "Kunjungan Industri";
+    public function program($program){
+        return view('praktikum1.detail-program')->with('program', $program);
     }
 }
