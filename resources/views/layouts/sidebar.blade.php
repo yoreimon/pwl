@@ -63,6 +63,14 @@
                          </p>
                      </a>
                  </li>
+                 <li class="nav-item">
+                     <a href="/articles" class="nav-link">
+                         <i class="nav-icon fas fa-newspaper"></i>
+                         <p>
+                             Daftar Artikel
+                         </p>
+                     </a>
+                 </li>
              </ul>
          </nav>
          <!-- /.sidebar-menu -->
