@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return "
-            <h1>Home</h1>
-        ";
+        return view("praktikum1.home");
     }
 }
