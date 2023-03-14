@@ -18,8 +18,12 @@ class DatabaseSeeder extends Seeder
         //     ArticlesSeeder::class,
         // ]);
 
+        // $this->call([
+        //     HobbySeeder::class,
+        // ]);
+
         $this->call([
-            HobbySeeder::class,
+            FamilySeeder::class,
         ]);
     }
 }

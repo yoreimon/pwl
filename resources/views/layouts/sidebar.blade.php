@@ -79,6 +79,14 @@
                          </p>
                      </a>
                  </li>
+                 <li class="nav-item">
+                     <a href="/keluarga" class="nav-link">
+                         <i class="nav-icon fas fa-users"></i>
+                         <p>
+                             Daftar Keluarga
+                         </p>
+                     </a>
+                 </li>
              </ul>
          </nav>
          <!-- /.sidebar-menu -->
