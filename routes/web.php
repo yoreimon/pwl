@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PengalamanKuliahController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,14 +46,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get("/contact-us", [ContactUsController::class, 'index']);
 
 // Praktikum 2 Jobsheet 3
-Route::get('/', [DashboardController::class, 'index']);
-Route::get('/profile', [ProfileController::class, 'index']);
-Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
-Route::get('/articles', [ArticlesController::class, 'index']);
-<<<<<<< HEAD
-Route::get('/hobbies', [HobbyController::class, 'index']);
-=======
-Route::get('/hobi', [HobbyController::class, 'index']);
-Route::get('/keluarga', [FamilyController::class, 'index']);
-Route::get('/mata-kuliah', [MataKuliahController::class, 'index']);
->>>>>>> c1d21601dda88c0b870af0f59a4105e49cbf11a5
+
+Auth::routes();
+Route::get('logout', [LoginController::class, 'logout']);
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/', [DashboardController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
+    Route::get('/articles', [ArticlesController::class, 'index']);
+    Route::get('/hobi', [HobbyController::class, 'index']);
+    Route::get('/keluarga', [FamilyController::class, 'index']);
+    Route::get('/mata-kuliah', [MataKuliahController::class, 'index']);
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

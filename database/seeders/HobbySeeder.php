@@ -15,10 +15,6 @@ class HobbySeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
-        Hobby::factory()->count(10)->create();
-=======
         Hobby::Factory()->count(2)->create();
->>>>>>> c1d21601dda88c0b870af0f59a4105e49cbf11a5
     }
 }
