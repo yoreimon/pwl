@@ -17,8 +17,13 @@ class HobbyFactory extends Factory
     public function definition()
     {
         return [
+<<<<<<< HEAD
             'name' => fake('id_ID')->name,
             'hobby' => fake()->sentence,
+=======
+            'jenis' => fake()->randomElement(['olahraga', 'musik']),
+            'hobi' => fake()->randomElement(['basket', 'bermain gitar']),
+>>>>>>> c1d21601dda88c0b870af0f59a4105e49cbf11a5
         ];
     }
 }

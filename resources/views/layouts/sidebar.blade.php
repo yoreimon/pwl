@@ -71,6 +71,30 @@
                          </p>
                      </a>
                  </li>
+                 <li class="nav-item">
+                     <a href="/hobi" class="nav-link">
+                         <i class="nav-icon fas fa-play"></i>
+                         <p>
+                             Daftar Hobi
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="/keluarga" class="nav-link">
+                         <i class="nav-icon fas fa-users"></i>
+                         <p>
+                             Daftar Keluarga
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="/mata-kuliah" class="nav-link">
+                         <i class="nav-icon fas fa-graduation-cap"></i>
+                         <p>
+                             Daftar Mata Kuliah
+                         </p>
+                     </a>
+                 </li>
              </ul>
          </nav>
          <!-- /.sidebar-menu -->

@@ -10,6 +10,9 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FamilyController;
+use App\Http\Controllers\HobbyController;
+use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PengalamanKuliahController;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +48,10 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
 Route::get('/articles', [ArticlesController::class, 'index']);
+<<<<<<< HEAD
 Route::get('/hobbies', [HobbyController::class, 'index']);
+=======
+Route::get('/hobi', [HobbyController::class, 'index']);
+Route::get('/keluarga', [FamilyController::class, 'index']);
+Route::get('/mata-kuliah', [MataKuliahController::class, 'index']);
+>>>>>>> c1d21601dda88c0b870af0f59a4105e49cbf11a5

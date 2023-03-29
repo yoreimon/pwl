@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Hobby;
+use App\Models\MataKuliah;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class HobbySeeder extends Seeder
+class MataKuliahSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,6 @@ class HobbySeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
-        Hobby::factory()->count(10)->create();
-=======
-        Hobby::Factory()->count(2)->create();
->>>>>>> c1d21601dda88c0b870af0f59a4105e49cbf11a5
+        MataKuliah::factory()->count(3)->create();
     }
 }
