@@ -45,3 +45,4 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
 Route::get('/articles', [ArticlesController::class, 'index']);
+Route::get('/hobbies', [HobbyController::class, 'index']);
