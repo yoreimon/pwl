@@ -88,10 +88,18 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/mata-kuliah" class="nav-link">
+                     <a href="{{ url('/mata-kuliah') }}" class="nav-link">
                          <i class="nav-icon fas fa-graduation-cap"></i>
                          <p>
                              Daftar Mata Kuliah
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ url('/mahasiswa') }}" class="nav-link">
+                         <i class="nav-icon fas fa-users"></i>
+                         <p>
+                             Mahasiswa
                          </p>
                      </a>
                  </li>
