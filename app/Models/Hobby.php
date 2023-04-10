@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hobby extends Model
 {
+    use HasFactory;
     protected $table = 'hobbies';
     protected $primaryKey = 'id';
-    use HasFactory;
+
+    protected $fillable = [
+        'jenis',
+        'hobi',
+    ];
 }

@@ -40,7 +40,7 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                     <a href="/" class="nav-link">
+                     <a href="{{ url('') }}" class="nav-link">
                          <i class="nav-icon fas fa-home"></i>
                          <p>
                              Dashboard
@@ -48,7 +48,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/profile" class="nav-link">
+                     <a href="{{ url('/profile') }}" class="nav-link">
                          <i class="nav-icon fas fa-user"></i>
                          <p>
                              Profile
@@ -56,7 +56,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/pengalaman-kuliah" class="nav-link">
+                     <a href="{{ url('/pengalaman-kuliah') }}" class="nav-link">
                          <i class="nav-icon fas fa-graduation-cap"></i>
                          <p>
                              Pengalaman Kuliah
@@ -64,7 +64,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/articles" class="nav-link">
+                     <a href="{{ url('/articles') }}" class="nav-link">
                          <i class="nav-icon fas fa-newspaper"></i>
                          <p>
                              Daftar Artikel
@@ -72,7 +72,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/hobi" class="nav-link">
+                     <a href="{{ url('/hobi') }}" class="nav-link">
                          <i class="nav-icon fas fa-play"></i>
                          <p>
                              Daftar Hobi
@@ -80,7 +80,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="/keluarga" class="nav-link">
+                     <a href="{{ url('/keluarga') }}" class="nav-link">
                          <i class="nav-icon fas fa-users"></i>
                          <p>
                              Daftar Keluarga
