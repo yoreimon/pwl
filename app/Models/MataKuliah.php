@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class MataKuliah extends Model
 {
+    use HasFactory;
     protected $table = 'mata_kuliahs';
     protected $primaryKey = 'id';
-    use HasFactory;
+
+    protected $fillable = [
+        'nama_matkul',
+        'sks',
+    ];
 }
