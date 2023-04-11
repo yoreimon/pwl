@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Family extends Model
 {
+    use HasFactory;
     protected $table = 'families';
     protected $primaryKey = 'id';
-    use HasFactory;
+
+    protected $fillable = [
+        'nama',
+        'relasi',
+        'umur',
+    ];
 }
