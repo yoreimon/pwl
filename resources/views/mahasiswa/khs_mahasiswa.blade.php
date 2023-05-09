@@ -24,7 +24,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Hallo</h3>
+                <h3 class="card-title">Kartu Hasil Studi</h3>
 
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,50 +36,34 @@
                 </div>
             </div>
             <div class="card-body">
-
-                <a href="{{url('mahasiswa/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Nama: </b>{{$mhs->nama}}</li>
+                    <li class="list-group-item"><b>NIM: </b>{{$mhs->nim}}</li>
+                    <li class="list-group-item"><b>Kelas: </b>{{$mhs->kelas->nama_kelas}}</li>
+                </ul>
 
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>NIM</th>
-                            <th>Nama</th>
-                            <th>Kelas</th>
-                            <th>HP</th>
-                            <th>Action</th>
+                            <th>Mata Kuliah</th>
+                            <th>SKS</th>
+                            <th>Semester</th>
+                            <th>Nilai</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if($mhs->count() > 0)
-                        @foreach($paginate as $m)
+                        @foreach($mhs->matakuliah as $n)
                         <tr>
-                            <td>{{$m->nim}}</td>
-                            <td>{{$m->nama}}</td>
-                            <td>{{$m->kelas->nama_kelas}}</td>
-                            <td>{{$m->hp}}</td>
-                            <td class="d-flex">
-                                <!-- Bikin tombol edit dan delete -->
-                                <a href="{{ url('/mahasiswa/'. $m->nim) }}" class="btn btn-sm btn-info mx-2">Show</a>
-
-                                <a href="{{ url('/mahasiswa/'. $m->nim.'/edit') }}"
-                                    class="btn btn-sm btn-primary mx-2">Edit</a>
-
-                                <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger mx-2">Delete</button>
-                                </form>
-
-                                <a href="{{ url('/mahasiswa/detail-nilai/'. $m->nim) }}"
-                                    class="btn btn-sm btn-warning mx-2">Nilai</a>
-                            </td>
+                            <td>{{$n->nama_matkul}}</td>
+                            <td>{{$n->sks}}</td>
+                            <td>{{$n->semester}}</td>
+                            <td>{{$n->pivot->nilai}}</td>
                         </tr>
                         @endforeach
-                        @else
-                        <tr>
-                            <td colspan="6" class="text-center">Data tidak ada</td>
-                        </tr>
-                        @endif
+                        @if($mhs->matakuliah->count() <= 0) <tr>
+                            <td colspan="6" class="text-center">Data Nilai belum ada</td>
+                            </tr>
+                            @endif
                     </tbody>
                 </table>
             </div>
