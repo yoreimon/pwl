@@ -42,32 +42,32 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No</th>
                             <th>NIM</th>
                             <th>Nama</th>
-                            <th>JK</th>
+                            <th>Kelas</th>
                             <th>HP</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if($mhs->count() > 0)
-                        @foreach($mhs as $i => $m)
+                        @foreach($paginate as $m)
                         <tr>
-                            <td>{{++$i}}</td>
                             <td>{{$m->nim}}</td>
                             <td>{{$m->nama}}</td>
-                            <td>{{$m->jk}}</td>
+                            <td>{{$m->kelas->nama_kelas}}</td>
                             <td>{{$m->hp}}</td>
-                            <td>
+                            <td class="col-2 d-flex">
                                 <!-- Bikin tombol edit dan delete -->
-                                <a href="{{ url('/mahasiswa/'. $m->id.'/edit') }}"
-                                    class="btn btn-sm btn-warning">edit</a>
+                                <a href="{{ url('/mahasiswa/'. $m->nim) }}" class="btn btn-sm btn-info mx-2">Show</a>
+
+                                <a href="{{ url('/mahasiswa/'. $m->nim.'/edit') }}"
+                                    class="btn btn-sm btn-primary mx-2">Edit</a>
 
                                 <form method="POST" action="{{ url('/mahasiswa/'.$m->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">hapus</button>
+                                    <button type="submit" class="btn btn-sm btn-danger mx-2">Delete</button>
                                 </form>
                             </td>
                         </tr>
