@@ -59,7 +59,7 @@
                         <label for="kelas">Kelas</label>
                         <select name="kelas" class="form-control">
                             @foreach($kelas as $kls)
-                            <option value="{{$kls->id}}" {{ $mhs->kelas_id == $kls->id ? 'selected' : ''}}>
+                            <option value="{{$kls->id}}" {{ $kls->kelas_id == $kls->id ? 'selected' : ''}}>
                                 {{$kls->nama_kelas}}
                             </option>
                             @endforeach
@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <label>JK</label>
                         <input class="form-control @error('jk') is-invalid @enderror"
-                            value="{{ isset($mhs)? $mhs->jk : old('jk') }}" name="jk" type="text">
+                            value="{{ isset($mhs) ? $mhs->jk : old('jk') }}" name="jk" type="text">
                         @error('jk')
                         <span class="error invalid-feedback">{{ $message }}</span>
                         @enderror
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label>Tempat Lahir</label>
                         <input class="form-control @error('tempat_lahir') is-invalid @enderror"
-                            value="{{ isset($mhs)? $mhs->tempat_lahir : old('tempat_lahir') }}" name="tempat_lahir"
+                            value="{{ isset($mhs) ? $mhs->tempat_lahir : old('tempat_lahir') }}" name="tempat_lahir"
                             type="text">
                         @error('tempat_lahir')
                         <span class="error invalid-feedback">{{ $message }}</span>
