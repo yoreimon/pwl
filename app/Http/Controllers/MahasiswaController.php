@@ -52,7 +52,14 @@ class MahasiswaController extends Controller
             'tanggal_lahir' => 'required|date', // YYYY-MM-DD Format ISO
             'alamat' => 'required|string|max:255',
             'hp' => 'required|digits_between:6,15',
+            'foto' => 'required',
         ]);
+        
+        $image_name = NULL;
+        
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
 
         $mahasiswa = new MahasiswaModel;
         $mahasiswa->nim = $request->get('nim');
@@ -62,6 +69,7 @@ class MahasiswaController extends Controller
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
         $mahasiswa->alamat = $request->get('alamat');
         $mahasiswa->hp = $request->get('hp');
+        $mahasiswa->foto = $image_name;
         $mahasiswa->save();
 
         $kelas = new Kelas;
@@ -127,7 +135,14 @@ class MahasiswaController extends Controller
             'tanggal_lahir' => 'required|date', // YYYY-MM-DD Format ISO
             'alamat' => 'required|string|max:255',
             'hp' => 'required|digits_between:6,15',
+            'foto' => 'required',
         ]);
+
+        $image_name = NULL;
+        
+        if($request->file('foto')){
+            $image_name = $request->file('foto')->store('image', 'public');
+        }
 
         $mahasiswa = MahasiswaModel::with('kelas')->where('nim', $nim)->first();
         $mahasiswa->nim = $request->get('nim');
@@ -137,6 +152,7 @@ class MahasiswaController extends Controller
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
         $mahasiswa->alamat = $request->get('alamat');
         $mahasiswa->hp = $request->get('hp');
+        $mahasiswa->foto = $image_name;
         $mahasiswa->save();
 
         $kelas = new Kelas();

@@ -44,6 +44,7 @@
                         <tr>
                             <th>NIM</th>
                             <th>Nama</th>
+                            <th>Foto</th>
                             <th>Kelas</th>
                             <th>HP</th>
                             <th>Action</th>
@@ -55,6 +56,8 @@
                         <tr>
                             <td>{{$m->nim}}</td>
                             <td>{{$m->nama}}</td>
+                            <td><img width="100px" height="100px"
+                                    src="{{ isset($mhs)? asset('storage/'.$m->foto) : ''}}"></td>
                             <td>{{$m->kelas->nama_kelas}}</td>
                             <td>{{$m->hp}}</td>
                             <td class="d-flex">

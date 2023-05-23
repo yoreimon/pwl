@@ -45,6 +45,8 @@
                     <li class="list-group-item"><b>Tanggal Lahir: </b>{{$mhs->tanggal_lahir}}</li>
                     <li class="list-group-item"><b>Alamat: </b>{{$mhs->alamat}}</li>
                     <li class="list-group-item"><b>No. HP: </b>{{$mhs->hp}}</li>
+                    <li class="list-group-item"><b>Foto: </b><img width="150px"
+                            src="{{ isset($mhs)? asset('storage/'.$mhs->foto) : ''}}"></li>
                 </ul>
             </div>
             <!-- /.card-body -->
