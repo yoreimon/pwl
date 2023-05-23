@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\Mahasiswa_MataKuliah;
 use App\Models\MataKuliah;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class MahasiswaController extends Controller
 {
@@ -183,5 +184,11 @@ class MahasiswaController extends Controller
     public function detail_nilai($nim){
         $mahasiswa = MahasiswaModel::where('nim', $nim)->first();
         return view('mahasiswa.khs_mahasiswa', ['mhs' => $mahasiswa]);
+    }
+
+    public function cetak_nilai($nim){
+        $mahasiswa = MahasiswaModel::where('nim', $nim)->first();
+        $pdf = Pdf::loadview('mahasiswa.nilai_pdf', ['mhs'=>$mahasiswa]);
+        return $pdf->stream();
     }
 }

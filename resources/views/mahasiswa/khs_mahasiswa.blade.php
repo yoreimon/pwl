@@ -66,6 +66,11 @@
                             @endif
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    <a class="mt-3 btn btn-danger" href="{{ url('/mahasiswa/detail-nilai/'. $mhs->nim. '/cetak') }}">
+                        Cetak KHS
+                    </a>
+                </div>
             </div>
             <!-- /.card-body -->
         </div>
