@@ -97,7 +97,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary" id="save_btn">Save changes</button>
                 </div>
             </div>
         </div>
@@ -115,6 +115,16 @@ function updateData(th) {
     $('#modal_mahasiswa #hp').val($(th).data('hp'));
     $('#modal_mahasiswa #form_mahasiswa').attr('action', $(th).data('url'));
     $('#modal_mahasiswa #form_mahasiswa').append('<input type="hidden" name="_method" value="PUT">');
+}
+
+function showDetail(th) {
+    $('#modal_mahasiswa').modal('show');
+    $('#modal_mahasiswa .modal-title').html('Show Data Mahasiswa');
+    $('#modal_mahasiswa #nim').val($(th).data('nim')).prop('readonly', true);
+    $('#modal_mahasiswa #nama').val($(th).data('nama')).prop('readonly', true);
+    $('#modal_mahasiswa #hp').val($(th).data('hp')).prop('readonly', true);
+    $('#modal_mahasiswa #form_mahasiswa').append('<input type="hidden" name="_method" value="PUT">');
+    $('#modal_mahasiswa #save_btn').hide();
 }
 
 $(document).ready(function() {
@@ -175,8 +185,11 @@ $(document).ready(function() {
                         `" class="btn btn-xs btn-warning" onclick="updateData(this)" data-id="` +
                         row.id + `" data-nim="` + row.nim + `" data-nama="` + row.nama +
                         `" data-hp="` + row.hp + `"><i class="fa fa-edit"></i> Edit</button>` +
-                        `<a href="{{ url('/mahasiswa/') }} " class="btn btn-xs btn-info"><i class="fa fa-list"></i> Detail</a>` +
-                        `<form method="POST" action="{{ url('/mahasiswa/') }}` + data + `">
+                        `<button url="{{ url('/mahasiswa/') }} "onclick="showDetail(this)" class="btn btn-xs btn-info" data-id="` +
+                        row.id + `" data-nim="` + row.nim + `" data-nama="` + row.nama +
+                        `" data-hp="` + row.hp +
+                        `"><i class="fa fa-list"></i> Detail</button>` +
+                        `<form method="POST" action="{{ url('/mahasiswa/` + row.id + `') }}">
                                     @csrf @method('DELETE')
                             <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i> Hapus</button>
                         </form>`;
